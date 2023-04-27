@@ -43,4 +43,23 @@ describe("SingleSwapToken", () => {
       (await dai.balanceOf(accounts[0].address)).toString() / 10 ** 18
     );
   });
+
+  it("swapExactOutputSingle", async () => {
+    const wethAmountInMax = 10n ** 18n;
+    const daiAmountOut = 100n * 10n ** 18n;
+
+    //deposti weth
+    await weth.deposit({ value: wethAmountInMax });
+    await weth.approve(singleSwapToken.address, wethAmountInMax);
+
+    //swap
+    await singleSwapToken.swapExactOutputSingle(
+      WETH9,
+      DAI,
+      daiAmountOut,
+      wethAmountInMax
+    );
+    console.log(accounts[0].address);
+    console.log("Dai balance: ", await dai.balanceOf(accounts[0].address));
+  });
 });

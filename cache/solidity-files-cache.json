@@ -37,8 +37,8 @@
       ]
     },
     "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\contracts\\SwapToken.sol": {
-      "lastModificationDate": 1682535494624,
-      "contentHash": "422c1e6022bb4b005b724327f55fd0f7",
+      "lastModificationDate": 1682620875946,
+      "contentHash": "d229b473fb5523f67648ec0c88c18f11",
       "sourceName": "contracts/SwapToken.sol",
       "solcConfig": {
         "version": "0.8.18",

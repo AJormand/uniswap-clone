@@ -33,13 +33,12 @@ contract SingleSwapToken {
     }
 
     function swapExactOutputSingle(address token1, address token2,uint amountOut, uint amountInMaximum) external returns(uint amountIn) {
-        TransferHelper.safeTransferFrom(token2, msg.sender, address(this), amountInMaximum);
-        TransferHelper.safeApprove(token2, address(this), amountInMaximum);
+        TransferHelper.safeTransferFrom(token1, msg.sender, address(this), amountInMaximum);
+        TransferHelper.safeApprove(token1, address(swapRouter), amountInMaximum);
 
         ISwapRouter.ExactOutputSingleParams memory params = ISwapRouter.ExactOutputSingleParams({
             tokenIn:token1,
             tokenOut:token2,
-
             fee:3000,
             recipient:msg.sender,
             deadline:block.timestamp,
@@ -49,6 +48,7 @@ contract SingleSwapToken {
         });
 
         amountIn = swapRouter.exactOutputSingle(params);
+
         if(amountIn < amountInMaximum) {
             TransferHelper.safeApprove(token1, address(swapRouter), 0);
 
