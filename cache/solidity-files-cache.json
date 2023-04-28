@@ -1,10 +1,86 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\contracts\\IWETH.sol": {
-      "lastModificationDate": 1682536991863,
-      "contentHash": "72a1b6a269eb623dae4c363bd699a620",
-      "sourceName": "contracts/IWETH.sol",
+    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\contracts\\ERC20Boo.sol": {
+      "lastModificationDate": 1682713342330,
+      "contentHash": "0b208149515bad53b1a9382f7b851201",
+      "sourceName": "contracts/ERC20Boo.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.7 < 0.9.0"
+      ],
+      "artifacts": [
+        "BooToken"
+      ]
+    },
+    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
+      "lastModificationDate": 1682532050472,
+      "contentHash": "834a0dde221759af42b030253315b086",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
+      "lastModificationDate": 1682532050441,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
         "version": "0.8.18",
         "settings": {
@@ -30,16 +106,51 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.7.7 < 0.9.0"
+        "^0.8.0"
       ],
       "artifacts": [
-        "IWETH"
+        "Context"
       ]
     },
-    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\contracts\\SwapToken.sol": {
-      "lastModificationDate": 1682620875946,
-      "contentHash": "d229b473fb5523f67648ec0c88c18f11",
-      "sourceName": "contracts/SwapToken.sol",
+    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1682532050521,
+      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol": {
+      "lastModificationDate": 1682532050522,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
       "solcConfig": {
         "version": "0.8.18",
         "settings": {
@@ -64,14 +175,13 @@
         }
       },
       "imports": [
-        "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol",
-        "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol"
+        "../IERC20.sol"
       ],
       "versionPragmas": [
-        ">=0.7.7 < 0.9.0"
+        "^0.8.0"
       ],
       "artifacts": [
-        "SingleSwapToken"
+        "IERC20Metadata"
       ]
     },
     "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\node_modules\\@uniswap\\v3-periphery\\contracts\\libraries\\TransferHelper.sol": {
@@ -111,6 +221,44 @@
         "TransferHelper"
       ]
     },
+    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\contracts\\SwapToken.sol": {
+      "lastModificationDate": 1682621299279,
+      "contentHash": "1f6740a3994930b89e2194fa0df4eb27",
+      "sourceName": "contracts/SwapToken.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol",
+        "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.7 < 0.9.0"
+      ],
+      "artifacts": [
+        "SingleSwapToken"
+      ]
+    },
     "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\node_modules\\@uniswap\\v3-periphery\\contracts\\interfaces\\ISwapRouter.sol": {
       "lastModificationDate": 1682532008218,
       "contentHash": "ffd42687b3db01d30c24213d961fcf9f",
@@ -148,41 +296,6 @@
         "ISwapRouter"
       ]
     },
-    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
-      "lastModificationDate": 1682532050521,
-      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
-      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-      "solcConfig": {
-        "version": "0.8.18",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC20"
-      ]
-    },
     "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\node_modules\\@uniswap\\v3-core\\contracts\\interfaces\\callback\\IUniswapV3SwapCallback.sol": {
       "lastModificationDate": 1682532008083,
       "contentHash": "a8ba2d37b0107911ae0e3b0e123cbd83",
@@ -216,6 +329,116 @@
       ],
       "artifacts": [
         "IUniswapV3SwapCallback"
+      ]
+    },
+    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\contracts\\SwapMultiHop.sol": {
+      "lastModificationDate": 1682711533633,
+      "contentHash": "f9cc043e77574d59131d14ccc7ed3f3d",
+      "sourceName": "contracts/SwapMultiHop.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol",
+        "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.7 < 0.9.0"
+      ],
+      "artifacts": [
+        "SwapMultiHop"
+      ]
+    },
+    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\contracts\\ERC20Life.sol": {
+      "lastModificationDate": 1682712544806,
+      "contentHash": "110d8407115161a9b4465e3b0aab6dfb",
+      "sourceName": "contracts/ERC20Life.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.7 < 0.9.0"
+      ],
+      "artifacts": [
+        "LifeToken"
+      ]
+    },
+    "C:\\Users\\vrank\\Documents\\solidity projects\\02 My projects\\uniswap-clone\\contracts\\IWETH.sol": {
+      "lastModificationDate": 1682536991863,
+      "contentHash": "72a1b6a269eb623dae4c363bd699a620",
+      "sourceName": "contracts/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.7 < 0.9.0"
+      ],
+      "artifacts": [
+        "IWETH"
       ]
     }
   }
