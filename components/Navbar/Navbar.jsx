@@ -6,8 +6,11 @@ import Link from "next/link";
 import style from "./Navbar.module.css";
 import images from "../../assets";
 import { Model, TokenList } from "../index";
+import { SwapTokenContext } from "@/Context/SwapContext";
 
 const Navbar = () => {
+  const { ether, account, networkConnected, connectWallet, tokenData } =
+    useContext(SwapTokenContext);
   const menuItems = [
     { name: "Swap", link: "/" },
     { name: "Tokens", link: "/" },
@@ -15,7 +18,7 @@ const Navbar = () => {
   ];
   const [openModel, setOpenModel] = useState(false);
   const [openTokenBox, setOpenTokenBox] = useState(false);
-  const [account, setAccount] = useState(false);
+  //const [account, setAccount] = useState(false);
 
   return (
     <div className={style.NavBar}>
@@ -73,19 +76,22 @@ const Navbar = () => {
                 setOpenTokenBox(true);
               }}
             >
-              0xdfs3434.2sdfdf
+              {account.slice(0, 4)}...{account.slice(-4)}
             </button>
           )}
 
           {openModel && (
-            <Model setOpenModel={setOpenModel} setConnectWallet="Connect" />
+            <Model
+              setOpenModel={setOpenModel}
+              setConnectWallet={connectWallet}
+            />
           )}
         </div>
       </div>
 
       {/* //TOKENLIST COMPONENT */}
       {openTokenBox && (
-        <TokenList tokenDate="hey" setOpenTokenBox={setOpenTokenBox} />
+        <TokenList tokenData={tokenData} setOpenTokenBox={setOpenTokenBox} />
       )}
     </div>
   );
