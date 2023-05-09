@@ -6,7 +6,7 @@ import { HeroSection } from "@/components";
 const index = () => {
   return (
     <div>
-      <HeroSection accounts="hey" tokenData="DATA" />
+      <HeroSection tokenData="DATA" />
     </div>
   );
 };
