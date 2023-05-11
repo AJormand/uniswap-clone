@@ -6,9 +6,21 @@ const NEXT_PUBLIC_ALCHEMY_MAINNET_URL =
 
 console.log(NEXT_PUBLIC_ALCHEMY_MAINNET_URL);
 
-/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.18",
+  solidity: {
+    compilers: [
+      {
+        version: "0.7.6",
+        settings: {
+          evmVersion: "istanbul",
+          optimizer: {
+            enabled: true,
+            runs: 1000,
+          },
+        },
+      },
+    ],
+  },
   networks: {
     hardhat: {
       chainId: 1337, // for local development

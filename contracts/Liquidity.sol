@@ -1,12 +1,12 @@
 //SPDX-License-Identifier: UNLICENSED
-pragma solidity >=0.7.7 < 0.9.0;
+pragma solidity >=0.7.0 < 0.9.0;
 pragma abicoder v2; //allows to use nested arrays
 
 import "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
 import "@uniswap/v3-core/contracts/libraries/TickMath.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 import "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol";
-import "@uniswap/v3-periphery/contracts/Interfaces/INonfungiblePositionManager.sol";
+import "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol";
 import "@uniswap/v3-periphery/contracts/base/LiquidityManagement.sol";
 
 import "hardhat/console.sol";
