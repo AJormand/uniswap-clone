@@ -75,8 +75,8 @@ contract LiquidityExamples is IERC721Receiver {
         uint amount1ToMint = 100 * 1e6;
 
         //Approve the position manager
-        TransferHelper.safeApprove(DAI, address(nonFungiblePositionManager), amount0ToMint);
-        TransferHelper.safeApprove(USDC, address(nonFungiblePositionManager), amount1ToMint);
+        TransferHelper.safeApprove(DAI, address(nonfungiblePositionManager), amount0ToMint);
+        TransferHelper.safeApprove(USDC, address(nonfungiblePositionManager), amount1ToMint);
 
         INonfungiblePositionManager.MintParams memory params = INonfungiblePositionManager.MintParams({
             token0:DAI,
@@ -87,11 +87,11 @@ contract LiquidityExamples is IERC721Receiver {
             // Not recommended in production
             tickLower: TickMath.MIN_TICK,
             tickUpper: TickMath.MAX_TICK,
-            amoun0Desired:amount0ToMint,
-            amount1Desired:amount1ToMint,
+            amount0Desired: amount0ToMint,
+            amount1Desired: amount1ToMint,
             amount0Min:0,
             amount1Min:0,
-            recipinet:address(this),
+            recipient:address(this),
             deadline:block.timestamp
         });
 
