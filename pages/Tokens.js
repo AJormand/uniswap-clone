@@ -61,7 +61,7 @@ const Tokens = () => {
     if (filteredTokens.length === 0) {
       setAllTokenList(copyAllTokenList);
     } else {
-      setAllTokenList(copyAllTokenList);
+      setAllTokenList(filteredTokens);
     }
   };
 
@@ -72,7 +72,9 @@ const Tokens = () => {
   };
 
   useEffect(() => {
+    console.log(searchItem);
     const timer = setTimeout(() => setSearch(searchItem), 1000);
+    console.log(search);
     return () => {
       clearTimeout(timer);
     };
