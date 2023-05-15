@@ -7,13 +7,13 @@ import style from "../styles/Pools.module.css";
 
 import { PoolAdd, PoolConnect } from "@/components";
 
-const Pool = () => {
+const Pools = () => {
   return (
     <div className={style.Pool}>
-      <PoolAdd />
-      {/* <PoolConnect /> */}
+      {/* <PoolAdd /> */}
+      <PoolConnect />
     </div>
   );
 };
 
-export default Pool;
+export default Pools;

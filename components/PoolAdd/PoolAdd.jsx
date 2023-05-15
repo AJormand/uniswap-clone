@@ -196,7 +196,7 @@ const PoolAdd = () => {
               <div className={style.PoolAdd_box_price_right_range_box}>
                 <p>Min Price</p>
                 <p
-                  className={style.PoolAdd_box_price_right_range_box}
+                  className={style.PoolAdd_box_price_right_range_box_para}
                   onClick={(e) => minPriceRange(e.target.innerText)}
                 >
                   <small>-</small> {minPrice} <small>+</small>
