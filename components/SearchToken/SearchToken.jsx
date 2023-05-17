@@ -23,6 +23,7 @@ const SearchToken = ({ setOpenToken, tokens, tokenData }) => {
           <h4>Select a token</h4>
           <Image
             src={images.close}
+            alt="img"
             width={50}
             height={50}
             onClick={() => setOpenToken(false)}
