@@ -24,12 +24,12 @@ const TokenList = ({ tokenData, setOpenTokenBox }) => {
       </div>
 
       {tokenList.map((el, i) => (
-        <div className={style.TokenList_box}>
+        <div className={style.TokenList_box} key={i}>
           <div className={style.TokenList_box_info}>
-            <p className={style.TokenList_box_info_symbol}>{el.name}</p>
+            <p className={style.TokenList_box_info_symbol}>{el.symbol}</p>
             <p>
               <span>{el.tokenBalance}</span>
-              {el.symbol}
+              {el.name}
             </p>
           </div>
         </div>

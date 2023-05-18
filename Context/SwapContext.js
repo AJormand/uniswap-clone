@@ -56,10 +56,10 @@ export const SwapTokenContextProvider = ({ children }) => {
       const userAccount = await checkIfWalletConnected();
       setAccount(userAccount);
       //CREATE PROVIDER
-      const web3Modal = new Web3Modal();
-      const connection = await web3Modal.connect();
+      const web3modal = new Web3Modal();
+      const connection = await web3modal.connect();
       const provider = new ethers.providers.Web3Provider(connection);
-      //CHECK BALANCE
+      //CHECK Balance
       const balance = await provider.getBalance(userAccount);
       const convertBal = BigNumber.from(balance).toString();
       const ethValue = ethers.utils.formatEther(convertBal);
@@ -70,42 +70,43 @@ export const SwapTokenContextProvider = ({ children }) => {
       setNetworkConnected(network.name);
 
       //ALL TOKEN BALANCE AND DATA
-      addToken.map(async (el, i) => {
-        //GETTING CONTRACT
-        const contract = new ethers.Contract(el, ERC20, provider);
-        //GETTING BALANCE OF TOKEN
-        const userBalance = await contract.balanceOf(userAccount);
-        const tokenLeft = BigNumber.from(userBalance).toString();
-        const convertTokenBal = ethers.utils.formatEther(tokenLeft);
-        console.log(convertTokenBal);
-        //GET NNAME AND SYMBOL
-        const symbol = await contract.symbol();
-        const name = await contract.name();
+      await Promise.all(
+        addToken.map(async (el, i) => {
+          //GETTING CONTRACT
+          const contract = new ethers.Contract(el, ERC20, provider);
+          //GETTING BALANCE OF TOKEN
+          const userBalance = await contract.balanceOf(userAccount);
+          const tokenLeft = BigNumber.from(userBalance).toString();
+          const convertTokenBal = ethers.utils.formatEther(tokenLeft);
+          //GET NAME AND SYMBOL
+          const symbol = await contract.symbol();
+          const name = await contract.name();
 
-        setTokenData((prev) => [
-          ...prev,
-          {
-            name: name,
-            symbol: symbol,
-            tokenBalance: convertTokenBal,
-            tokenAddress: el,
-          },
-        ]);
-      });
+          setTokenData((prev) => [
+            ...prev,
+            {
+              name: name,
+              symbol: symbol,
+              tokenBalance: convertTokenBal,
+              tokenAddress: el,
+            },
+          ]);
+        })
+      );
 
-      //WETH Balance
-      const wethContract = await connectingWithIWTHToken();
-      const wethBal = await wethContract.balanceOf(userAccount);
-      const wethToken = BigNumber.from(wethBal).toString();
-      const convertWethTokenBal = ethers.utils.formatEther(wethToken);
-      setWeth9(convertWethTokenBal);
+      // //WETH Balance
+      // const wethContract = await connectingWithIWTHToken();
+      // const wethBal = await wethContract.balanceOf(userAccount);
+      // const wethToken = BigNumber.from(wethBal).toString();
+      // const convertWethTokenBal = ethers.utils.formatEther(wethToken);
+      // setWeth9(convertWethTokenBal);
 
-      //DAI Balance
-      const daiContract = await connectingWithDAIToken();
-      const daiBal = await daiContract.balanceOf(userAccount);
-      const daiToken = BigNumber.from(daiBal).toString();
-      const convertDaiTokenBal = ethers.utils.formatEther(daiToken);
-      setDai(convertDaiTokenBal);
+      // //DAI Balance
+      // const daiContract = await connectingWithDAIToken();
+      // const daiBal = await daiContract.balanceOf(userAccount);
+      // const daiToken = BigNumber.from(daiBal).toString();
+      // const convertDaiTokenBal = ethers.utils.formatEther(daiToken);
+      // setDai(convertDaiTokenBal);
     } catch (error) {
       console.log(error);
     }
@@ -164,6 +165,8 @@ export const SwapTokenContextProvider = ({ children }) => {
       value={{
         singleSwapToken,
         connectWallet,
+        getPrice,
+        swapUpdatePrice,
         account,
         weth9,
         dai,
