@@ -88,6 +88,7 @@ export const SwapTokenContextProvider = ({ children }) => {
             name: name,
             symbol: symbol,
             tokenBalance: convertTokenBal,
+            tokenAddress: el,
           },
         ]);
       });
