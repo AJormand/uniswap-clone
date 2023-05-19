@@ -119,6 +119,7 @@ export const SwapTokenContextProvider = ({ children }) => {
 
   //SINGLE SWAP TOKEN
   const singleSwapToken = async ({ token1, token2, swapAmount }) => {
+    console.log(token1.tokenAddress, token2.tokenAddress, swapAmount);
     try {
       let singleSwapToken;
       let weth;
@@ -130,7 +131,11 @@ export const SwapTokenContextProvider = ({ children }) => {
 
       const decimals0 = 18;
       const inputAmount = swapAmount;
-      const amountIn = ethers.utils.parseUnits(inputAmount.toString, decimals0);
+      const amountIn = ethers.utils.parseUnits(
+        inputAmount.toString(),
+        decimals0
+      );
+      console.log("AmountInnnnnn", amountIn);
 
       console.log(amountIn);
 
@@ -139,8 +144,8 @@ export const SwapTokenContextProvider = ({ children }) => {
 
       //SWAP
       const transaction = await singleSwapToken.swapExactInputSingle(
-        token1.tokenAddress.tokenAddress,
-        token2.tokenAddress.tokenAddress,
+        token1.tokenAddress,
+        token2.tokenAddress,
         amountIn,
         {
           gasLimit: 300000,

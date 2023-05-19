@@ -85,7 +85,7 @@ const HeroSection = ({}) => {
 
         <div className={style.HeroSection_box_input}>
           <input
-            type="text"
+            type="number"
             placeholder="0"
             onChange={(e) => (
               callOutPut(e.target.value),
@@ -116,7 +116,7 @@ const HeroSection = ({}) => {
                 alt="loading"
               />
             ) : (
-              { tokenSwapOutput }
+              tokenSwapOutput
             )}
           </p>
           <button onClick={() => setOpenTokenTwo(true)}>
@@ -139,7 +139,7 @@ const HeroSection = ({}) => {
             alt="loading"
           />
         ) : (
-          { poolMessage }
+          poolMessage
         )}
 
         {!account ? (
@@ -152,7 +152,13 @@ const HeroSection = ({}) => {
         ) : (
           <button
             className={style.HeroSection_box_btn}
-            onClick={() => singleSwapToken()}
+            onClick={() =>
+              singleSwapToken({
+                token1: tokenOne,
+                token2: tokenTwo,
+                swapAmount,
+              })
+            }
           >
             Swap
           </button>

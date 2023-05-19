@@ -1,9 +1,9 @@
 const axios = require("axios");
 
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
+const NEXT_PUBLIC_ETHERSCAN_API_KEY = process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY;
 
 exports.getAbi = async (address) => {
-  const url = `https://api.etherscan.io/api?module=contract&action=getabi&address=${address}&apikey=${ETHERSCAN_API_KEY}`;
+  const url = `https://api.etherscan.io/api?module=contract&action=getabi&address=${address}&apikey=${NEXT_PUBLIC_ETHERSCAN_API_KEY}`;
   const res = await axios.get(url);
   const abi = JSON.parse(res.data.result);
   return abi;
@@ -11,7 +11,7 @@ exports.getAbi = async (address) => {
 
 exports.getPoolImmutables = async (poolContract) => {
   const [token0, token1, fee] = await Promise.all([
-    poolContract.token(),
+    poolContract.token0(),
     poolContract.token1(),
     poolContract.fee(),
   ]);
