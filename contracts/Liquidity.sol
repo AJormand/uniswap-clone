@@ -1,5 +1,5 @@
-// //SPDX-License-Identifier: UNLICENSED
-// pragma solidity >=0.7.0 < 0.9.0;
+//SPDX-License-Identifier: UNLICENSED
+pragma solidity >=0.7.0 < 0.9.0;
 // pragma abicoder v2; //allows to use nested arrays
 
 // import "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
