@@ -8,10 +8,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -46,10 +48,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -86,10 +90,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -122,10 +128,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -158,10 +166,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -194,10 +204,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -232,10 +244,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -271,10 +285,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -309,10 +325,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -345,10 +363,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -384,10 +404,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -422,10 +444,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -461,10 +485,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -500,10 +526,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -539,10 +567,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -577,10 +607,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {
@@ -613,10 +645,12 @@
       "solcConfig": {
         "version": "0.7.6",
         "settings": {
-          "evmVersion": "istanbul",
           "optimizer": {
             "enabled": true,
-            "runs": 1000
+            "runs": 5000,
+            "details": {
+              "yul": false
+            }
           },
           "outputSelection": {
             "*": {

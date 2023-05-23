@@ -17,16 +17,13 @@ const linkLibraries = ({ bytecode, linkReferences }, libraries) => {
       if (!libraries.hasOwnProperty(contractName)) {
         throw new Error(`Missing link library name ${contractName}`);
       }
-
       const address = utils
         .getAddress(libraries[contractName])
         .toLowerCase()
         .slice(2);
-
       linkReferences[fileName][contractName].forEach(({ start, length }) => {
         const start2 = 2 + start * 2;
         const length2 = length * 2;
-
         bytecode = bytecode
           .slice(0, start2)
           .concat(address)
@@ -34,22 +31,12 @@ const linkLibraries = ({ bytecode, linkReferences }, libraries) => {
       });
     });
   });
-
   return bytecode;
 };
 
 async function main() {
-  // const MAINNET_URL =
-  //   "your";
-
-  // const WALLET_ADDRESS = "your";
-  // const WALLET_SECRET =
-  //   "your";
-  // const provider = new ethers.providers.JsonRpcProvider(MAINNET_URL);
-  // const wallet = new ethers.Wallet(WALLET_SECRET);
-  // const signer = wallet.connect(provider);
-
   const [signer] = await ethers.getSigners();
+
   Weth = new ContractFactory(
     artifacts.WETH9.abi,
     artifacts.WETH9.bytecode,
@@ -102,11 +89,9 @@ async function main() {
     linkedBytecode,
     signer
   );
-
   nonfungibleTokenPositionDescriptor =
     await NonfungibleTokenPositionDescriptor.deploy(weth.address);
 
-  console.log(nonfungibleTokenPositionDescriptor);
   NonfungiblePositionManager = new ContractFactory(
     artifacts.NonfungiblePositionManager.abi,
     artifacts.NonfungiblePositionManager.bytecode,
